@@ -9,6 +9,11 @@ Write a function named raisedToTheThird that takes in an array of numbers and re
 ------------------------------------------------------------------------------------------------ */
 
 const raisedToTheThird = (arr) => {
+  let whyArr = [];
+  for (var i = 0; i < arr.length; i++ ){
+    let item = arr[i];
+    whyArr.push(Math.pow(item, 3));
+  }
   // Solution code here...
 }
 
