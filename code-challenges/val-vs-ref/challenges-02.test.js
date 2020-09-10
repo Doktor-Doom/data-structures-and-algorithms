@@ -15,7 +15,8 @@ const raisedToTheThird = (arr) => {
     whyArr.push(Math.pow(item, 3));
   }
   // Solution code here...
-}
+  return whyArr;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -25,6 +26,8 @@ Write a function that appends ' The end.' to a string, and returns the modified 
 ------------------------------------------------------------------------------------------------ */
 
 const appendTheEnd = (str) => {
+  let otherString = `${str} The end.`;
+  return otherString;
   // Solution code here...
 };
 
