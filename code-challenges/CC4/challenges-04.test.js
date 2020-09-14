@@ -77,7 +77,7 @@ const citiesAtoJ = (arr) => {
 //   return figNewton;
   let figArr = [];
   arr.forEach( val => {
-    let regex = /ˆ[A-J][a-zA-Z] /g;
+    let regex = /ˆ[A-J][a-zA-Z]+/g;
     const stad = val.match(regex);
     if(stad){
       figArr.push(stad[0]);
