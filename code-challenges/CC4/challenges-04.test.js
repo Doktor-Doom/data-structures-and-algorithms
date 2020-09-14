@@ -42,6 +42,8 @@ For example:
 
 const isNum = (input) => {
   // Solution code here...
+  let find = /\d/g;
+  return find.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -54,6 +56,7 @@ Return an array containing all the matches.
 
 const isCapitalized = (str) => {
   // Solution code here...
+  return str.match(/[A-Z]\w{1,}/g) || [];
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -64,19 +67,36 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   // Solution code here...
+//   let regex = /ˆ[A-J]\w+/;
+//   let figNewton = [];
+//   arr.forEach(element => {
+//     if(regex.test(element)) {
+//       figNewton.push(element);
+//     }
+//   });
+//   return figNewton;
+  let figArr = [];
+  arr.forEach( val => {
+    let regex = /ˆ[A-J][a-zA-Z] /g;
+    const stad = val.match(regex);
+    if(stad){
+      figArr.push(stad[0]);
+    }
+  });
+  return figArr;
 };
 
-/* ------------------------------------------------------------------------------------------------
-CHALLENGE 5 - Stretch Goal
+// ------------------------------------------------------------------------------------------------
+// CHALLENGE 5 - Stretch Goal
 
-You have created a game application and begin by asking users an easy question: In which month is Halloween?
+// You have created a game application and begin by asking users an easy question: In which month is Halloween?
 
-Write a function named matchMonth which uses a regular expression pattern to match any of these inputs: October, Oct, october, oct
+// Write a function named matchMonth which uses a regular expression pattern to match any of these inputs: October, Oct, october, oct
 
-If the user enters any of these four inputs, return true. For any other input, return false.
+// If the user enters any of these four inputs, return true. For any other input, return false.
 
-Do not use the vertical bar (pipe) in your pattern.
------------------------------------------------------------------------------------------------- */
+// Do not use the vertical bar (pipe) in your pattern.
+// ------------------------------------------------------------------------------------------------ */
 
 const matchMonth = (input) => {
   // Solution code here...
@@ -188,7 +208,7 @@ describe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should match any of the acceptable inputs', () => {
     expect(matchMonth('Oct')).toBeTruthy();
     expect(matchMonth('oct')).toBeTruthy();
@@ -206,7 +226,7 @@ xdescribe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   const lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lacinia vel massa sed egestas. Nunc faucibus iaculis elit, a scelerisque enim condimentum sed. Aenean ac scelerisque sem, et pharetra diam.';
 
   test('It should only return words that are immediately followed by a space', () => {
@@ -220,7 +240,7 @@ xdescribe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   let startString = 'This is a regex challenge. We are trying to create a hangman phrase where all of the vowels are missing!';
 
   test('It should remove the vowels from the hangman string and replace them with underscores', () => {
@@ -233,7 +253,7 @@ xdescribe('Testing challenge 7', () => {
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should return an array of instances of "sells", shells", and "seashells"', () => {
     expect(findShells(seashells)).toStrictEqual(['sells', 'seashells', 'shells', 'sells', 'seashells', 'sells', 'shells', 'sells', 'shells']);
     expect(findShells(seashells).length).toStrictEqual(9);
