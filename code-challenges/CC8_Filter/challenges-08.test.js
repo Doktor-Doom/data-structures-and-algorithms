@@ -23,6 +23,7 @@ const createServer = () => {
 
 function sayHello(request, response){
   // Solution code here...
+  response.send('Hello from the back-end -adelle voice');
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -35,6 +36,7 @@ For example, oddValues([1,2,3]) returns [1,3].
 
 const oddValues = (arr) => {
   // Solution code here...
+  return arr.filter(int => int % 2 !==0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -50,6 +52,7 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 
 const filterStringsWithVowels = (arr) => {
   // Solution code here...
+  return arr.filter(word => (/[ieoua]/g).test(word));
 };
 
 
@@ -63,6 +66,7 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 
 const notInFirstArray = (forbiddenValues, arr) => {
   // Solution code here...
+  return arr.filter(value => !forbiddenValues.includes(value));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -106,6 +110,7 @@ const snorlaxData = {
 
 const getBaseStatGreaterThan = (arr, minBaseStat) => {
   // Solution code here...
+  return arr.filter(int => minBaseStat.test);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -268,7 +273,7 @@ describe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should return an array containing the stats that are greater than the input', () => {
     expect(getBaseStatGreaterThan(snorlaxData.stats, 75)).toStrictEqual([ { stat: { url: 'https://pokeapi.co/api/v2/stat/5/', name: 'special-defense' }, effort: 2, baseStat: 110 } ]);
     expect(getBaseStatGreaterThan(snorlaxData.stats, 75).length).toStrictEqual(1);
