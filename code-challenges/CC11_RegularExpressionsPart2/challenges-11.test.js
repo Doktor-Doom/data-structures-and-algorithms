@@ -99,6 +99,14 @@ findTagNames(['<div><h1>Hello, world!</h1></div>', '<p>Welcome to my site</p>'])
 
 const findTagNames = elements => {
   // Solution code here...
+  let pineapple = /\/[a-z0-9]*/g;
+  const arr = elements.map(str => {
+    return str.match(pineapple);
+  });
+  return arr.reduce((result, subArr) => {
+    subArr.forEach(value => result.push(value));
+    return result;
+  }, []);
 };
 
 /* ------------------------------------------------------------------------------------------------
