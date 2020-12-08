@@ -153,6 +153,17 @@ The input and output of this function are the same as the input and output from 
 
 const hasChildrenEntries = (arr, character) => {
   // Solution code here...
+  let result = false;
+  arr.forEach(person => {
+    if (person.name === character) {
+      Object.entries(person).forEach(propValArr => {
+        if (propValArr[0] === 'children') {
+          result = !(propValArr[1].length === 0);
+        }
+      });
+    }
+  });
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -163,6 +174,17 @@ Write a function named totalCharacters that takes in an array and returns the nu
 
 const totalCharacters = (arr) => {
   // Solution code here...
+  let total = 0;
+  for (let character of arr) {
+    for (let entry of Object.entries(character)) {
+      if (['name','spouse'].includes(entry[0]) && entry[1]) {
+        total++;
+      } else if (entry[0] === 'children') {
+        total += entry[1].length;
+      }
+    }
+  }
+  return total;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -176,8 +198,8 @@ For example: [{ house: 'Stark', members: 7 }, { house: 'Arryn', members: 3 }, ..
 ------------------------------------------------------------------------------------------------ */
 
 const houseSize = (arr) => {
-  const sizes = [];
   // Solution code here...
+  const sizes = [];
   for (let character of arr) {
     sizes.push({
       'house' : character.house,
@@ -208,6 +230,22 @@ const deceasedSpouses = ['Catelyn', 'Lysa', 'Robert', 'Khal Drogo', 'Alerie'];
 const houseSurvivors = (arr) => {
   const survivors = [];
   // Solution code here...
+  for (let character of arr) {
+    let members = 0;
+    for (let entry of Object.entries(character)) {
+      if (entry[0] === 'name' && entry[1]) {
+        members++;
+      } else if (entry[0] === 'spouse' && entry[1] && !deceasedSpouses.includes(entry[1])) {
+        members++;
+      } else if (entry[0] === 'children') {
+        members += entry[1].length;
+      }
+    }
+    survivors.push({
+      'house' : character.house,
+      'members' : members
+    });
+  }
   return survivors;
 };
 
@@ -253,7 +291,7 @@ describe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should return true for characters that have children', () => {
     expect(hasChildrenEntries(characters, 'Eddard')).toBeTruthy();
   });
@@ -263,7 +301,7 @@ xdescribe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return the number of characters in the array', () => {
     expect(totalCharacters(characters)).toStrictEqual(26);
   });
@@ -276,7 +314,7 @@ describe('Testing challenge 7', () => {
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should not include any deceased spouses', () => {
     expect(houseSurvivors(characters)).toStrictEqual([{ house: 'Stark', members: 6 }, { house: 'Arryn', members: 2 }, { house: 'Lannister', members: 4 }, { house: 'Targaryen', members: 4 }, { house: 'Tyrell', members: 3 }, { house: 'Greyjoy', members: 1 }, { house: 'Snow', members: 1 }]);
   });

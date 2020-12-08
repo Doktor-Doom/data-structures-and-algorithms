@@ -1,6 +1,9 @@
 'use strict';
 
 /* ------------------------------------------------------------------------------------------------
+
+CC-10
+
 CHALLENGE 1 - Review
 
 Build a simple express server. Connect a '/hello' route that sends a greeting of your  choice. Connect a '/aboutme' route that sends a short bio about you to the front-end. Finally, connect a '/favoritefoods' route that sends an array to the front-end of your favorite foods. All other routes should respond with a status of 404.

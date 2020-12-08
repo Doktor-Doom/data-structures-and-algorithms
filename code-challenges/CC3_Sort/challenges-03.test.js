@@ -96,11 +96,23 @@ For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, an
 
 const alphabetizeBetter = (arr) => {
   // Solution code here...
-  arr.sort ((a, b) => {
-    if (a.toLowercase() > b.toLowercase()) {
-      return 1;
-    } else if (a.toLowercase() < b.toLowercase()) {
+  // arr.sort ((a, b) => {
+  //   if (a.toLowercase() > b.toLowercase()) {
+  //     return 1;
+  //   } else if (a.toLowercase() < b.toLowercase()) {
+  //     return -1;
+  //   } else {
+  //     return 0;
+  //   }
+  // });
+  // return arr;
+  arr.sort(function(a,b){
+    let standardA = a.toLowerCase();
+    let standardB = b.toLowerCase();
+    if(standardA < standardB){
       return -1;
+    } else if(standardA > standardB){
+      return 1;
     } else {
       return 0;
     }
@@ -123,6 +135,18 @@ Here is an example of the input:
 
 const sortByPrice = (arr) => {
   // Solution code here...
+  arr.sort(function(a, b){
+    let priceA = a['price'];
+    let priceB = b['price'];
+    if(priceA < priceB){
+      return -1;
+    } else if(priceA > priceB){
+      return 1;
+    } else {
+      return 0;
+    }
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -135,6 +159,16 @@ For example, [1, 14, 0.2, -281, 54782] is only correctly sorted in that order.
 
 const sortNumbersByLength = (arr) => {
   // Solution code here...
+  arr.sort(function(a, b){
+    if(a.toString().length < b.toString().length){
+      return -1;
+    } else if(a.toString().length > b.toString().length){
+      return 1;
+    } else {
+      return 0;
+    }
+  });
+  return arr;
 };
 
 /*-----------------------------------------------------------------------------------------------
@@ -157,6 +191,18 @@ const people = [
 
 const sortPeople = (arr) => {
   // Solution code here...
+  arr.sort(function(a, b){
+    let aLName = a.lastName;
+    let bLName = b.lastName;
+    if(aLName < bLName){
+      return -1;
+    } else if(aLName > bLName){
+      return 1;
+    } else {
+      return 0;
+    }
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -171,6 +217,26 @@ If two people have the same full name, the younger one should come first. Do not
 
 const sortPeopleBetter = (arr) => {
   // Solution code here...
+  arr.sort(function(a, b){
+    let aLName = a.lastName;
+    let bLName = b.lastName;
+    if(aLName === bLName && a.firstName === b.firstName && a.age < b.age){
+      return -1;
+    } else if(aLName === bLName && a.firstName === b.firstName && a.age > b.age){
+      return 1;
+    } else if(aLName === bLName && a.firstName < b.firstName){
+      return -1;
+    } else if(aLName === bLName && a.firstName > b.firstName){
+      return 1;
+    } else if(aLName < bLName){
+      return -1;
+    } else if(aLName > bLName){
+      return 1;
+    } else {
+      return 0;
+    }
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -197,6 +263,37 @@ const meetings = [
 
 const sortMeetingsByDay = (arr) => {
   // Solution code here...
+  let mon = 'monday';
+  let tue = 'tuesday';
+  let wed = 'wednesday';
+  let thurs = 'thursday';
+  let fri = 'friday';
+  arr.sort(function(a, b){
+    if(a.dayOfWeek.toLowerCase() !== mon && b.dayOfWeek.toLowerCase() === mon){
+      return 1;
+    } else if(a.dayOfWeek.toLowerCase() === mon && b.dayOfWeek.toLowerCase() !== mon){
+      return -1;
+    } if(a.dayOfWeek.toLowerCase() !== tue && (b.dayOfWeek.toLowerCase() === tue || b.dayOfWeek.toLowerCase() === mon)){
+      return 1;
+    } else if(a.dayOfWeek.toLowerCase() === tue && (b.dayOfWeek.toLowerCase() !== tue || b.dayOfWeek.toLowerCase() !== mon)){
+      return -1;
+    } else if(a.dayOfWeek.toLowerCase() !== wed && (b.dayOfWeek.toLowerCase() === wed || b.dayOfWeek.toLowerCase() === tue || b.dayOfWeek.toLowerCase() === mon)){
+      return 1;
+    } else if(a.dayOfWeek.toLowerCase() === wed && (b.dayOfWeek.toLowerCase() === thurs || b.dayOfWeek.toLowerCase() === fri)){
+      return -1;
+    } else if(a.dayOfWeek.toLowerCase() !== thurs && (b.dayOfWeek.toLowerCase() === thurs || b.dayOfWeek.toLowerCase() === wed || b.dayOfWeek.toLowerCase() === tue || b.dayOfWeek.toLowerCase() === mon)){
+      return 1;
+    } else if(a.dayOfWeek.toLowerCase() === thurs && b.dayOfWeek.toLowerCase() === fri){
+      return -1;
+    } else if(a.dayOfWeek.toLowerCase() === fri && b.dayOfWeek.toLowerCase() !== fri){
+      return 1;
+    } else if(a.dayOfWeek.toLowerCase() !== fri && b.dayOfWeek.toLowerCase() === fri){
+      return -1;
+    } else {
+      return 0;
+    }
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -211,6 +308,45 @@ You DO NOT need to use your solution to Challenge 9 in completing Challenge 10.
 
 const sortSchedule = (arr) => {
   // Solution code here...
+  let mon = 'monday';
+  let tue = 'tuesday';
+  let wed = 'wednesday';
+  let thurs = 'thursday';
+  let fri = 'friday';
+  arr.sort(function(a,b){
+    if(a.dayOfWeek.toLowerCase() === b.dayOfWeek.toLowerCase() && a.start === b.start && a.end < b.end){
+      return -1;
+    } else if(a.dayOfWeek.toLowerCase() === b.dayOfWeek.toLowerCase() && a.start === b.start && a.end > b.end){
+      return 1;
+    } else if(a.dayOfWeek.toLowerCase() === b.dayOfWeek.toLowerCase() && a.start < b.start){
+      return -1;
+    } else if(a.dayOfWeek.toLowerCase() === b.dayOfWeek.toLowerCase() && a.start > b.start){
+      return 1;
+    } else if(a.dayOfWeek.toLowerCase() !== mon && b.dayOfWeek.toLowerCase() === mon){
+      return 1;
+    } else if(a.dayOfWeek.toLowerCase() === mon && b.dayOfWeek.toLowerCase() !== mon){
+      return -1;
+    } if(a.dayOfWeek.toLowerCase() !== tue && (b.dayOfWeek.toLowerCase() === tue || b.dayOfWeek.toLowerCase() === mon)){
+      return 1;
+    } else if(a.dayOfWeek.toLowerCase() === tue && (b.dayOfWeek.toLowerCase() !== tue || b.dayOfWeek.toLowerCase() !== mon)){
+      return -1;
+    } else if(a.dayOfWeek.toLowerCase() !== wed && (b.dayOfWeek.toLowerCase() === wed || b.dayOfWeek.toLowerCase() === tue || b.dayOfWeek.toLowerCase() === mon)){
+      return 1;
+    } else if(a.dayOfWeek.toLowerCase() === wed && (b.dayOfWeek.toLowerCase() === thurs || b.dayOfWeek.toLowerCase() === fri)){
+      return -1;
+    } else if(a.dayOfWeek.toLowerCase() !== thurs && (b.dayOfWeek.toLowerCase() === thurs || b.dayOfWeek.toLowerCase() === wed || b.dayOfWeek.toLowerCase() === tue || b.dayOfWeek.toLowerCase() === mon)){
+      return 1;
+    } else if(a.dayOfWeek.toLowerCase() === thurs && b.dayOfWeek.toLowerCase() === fri){
+      return -1;
+    } else if(a.dayOfWeek.toLowerCase() === fri && b.dayOfWeek.toLowerCase() !== fri){
+      return 1;
+    } else if(a.dayOfWeek.toLowerCase() !== fri && b.dayOfWeek.toLowerCase() === fri){
+      return -1;
+    } else {
+      return 0;
+    }
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -228,6 +364,8 @@ $ = createSnippetWithJQuery(`
 
 const addPearClass = () => {
   // Solution code here...
+  // $('ul').append('<li>tea</li>');
+  $('li:nth-child(3)').addClass('pear');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -289,7 +427,7 @@ describe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should sort items by their price', () => {
     expect(sortByPrice([
       {name: 'Sweatshirt', price: 45},
@@ -305,7 +443,7 @@ xdescribe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should sort numbers by their length', () => {
     expect(sortNumbersByLength([10, 2.8, 1, -47.75])).toStrictEqual([1, 10, 2.8, -47.75]);
     expect(sortNumbersByLength([100, 2.82, 1, -47.75])).toStrictEqual([1, 100, 2.82, -47.75]);
@@ -313,7 +451,7 @@ xdescribe('Testing challenge 7', () => {
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should sort people by their last names', () => {
     expect(sortPeople(people)).toStrictEqual([
       new Person('Casey', 'Codefellow', 38),
@@ -325,7 +463,7 @@ xdescribe('Testing challenge 8', () => {
   });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   test('It should sort people with more strict ordering', () => {
     const family = [
       new Person('Casey', 'Codefellows', 55),
@@ -346,7 +484,7 @@ xdescribe('Testing challenge 9', () => {
   });
 });
 
-xdescribe('Testing challenge 10', () => {
+describe('Testing challenge 10', () => {
   test('It should sort meetings by the day on which they happen', () => {
     const sortedMeetings = sortMeetingsByDay(meetings);
     expect(sortedMeetings.slice(0,2)).toEqual(expect.arrayContaining([new Meeting('Monday', '0900', '0945'), new Meeting('Monday', '0900', '1000')]));
@@ -356,7 +494,7 @@ xdescribe('Testing challenge 10', () => {
   });
 });
 
-xdescribe('Testing challenge 11', () => {
+describe('Testing challenge 11', () => {
   test('It should sort meetings by when they happen', () => {
     expect(sortSchedule(meetings)).toStrictEqual([
       new Meeting('Monday', '0900', '0945'),
@@ -369,7 +507,7 @@ xdescribe('Testing challenge 11', () => {
   });
 });
 
-xdescribe('Testing challenge 12', () => {
+describe('Testing challenge 12', () => {
   test('It should add a class of pear to the thrid li', () => {
     addPearClass();
     expect($('li:nth-child(3)').hasClass('pear')).toBe(true);

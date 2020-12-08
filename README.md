@@ -63,3 +63,5 @@ The final structure should resemble this:
   ├── package.json
   └── README.md
 ```
+> Class-01 (dec07)
+[ArrayReverse-CC-01] (data-structures-and-algorithms/javascript/CodeChallenges/CC14_Array-Reverse/README.md)

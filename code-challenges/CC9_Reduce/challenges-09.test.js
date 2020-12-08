@@ -1,6 +1,9 @@
 'use strict';
 
 /* ------------------------------------------------------------------------------------------------
+
+CC-09
+
 CHALLENGE 1 - Review
 
 First, write a function called mapCurrentEvents that maps over the current events object, runs it through a constructor function and returns the resulting array.
@@ -194,8 +197,6 @@ function Events(obj){
   this.img_url = obj.url;
   this.date = obj.published.split(' ')[0];
   this.title = obj.title;
-
-
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -348,6 +349,13 @@ const characters = [
 
 const countNumberOfChildren = (arr) => {
   // Solution code here...
+  const total = arr.reduce((totalChildren, house) => {
+    if(house.children){
+      totalChildren += house.children.length;
+    }
+    return totalChildren;
+  }, 0);
+  return total;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -360,6 +368,13 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 
 const calculateAverage = (arr) => {
   // Solution code here...
+  const ave = arr.reduce((acc, val) => {
+    return {
+      'count' : acc.count + 1,
+      'sum' : acc.sum + val
+    };
+  }, { 'count' : 0, 'sum' : 0});
+  return ave.sum / ave.count;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -381,6 +396,12 @@ const isPrime = (value) => {
 
 const countPrimeNumbers = (arr) => {
   // Solution code here...
+  return arr.reduce((acc, val) => {
+    if(isPrime(val)){
+      return acc +=1;
+    }
+    return acc;
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -424,6 +445,12 @@ const snorlaxData = {
 
 const extractStat = (statName, arr) => {
   // Solution code here...
+  return arr.reduce((store, stat) => {
+    if (stat.stat.name === statName) {
+      return stat;
+    }
+    return store;
+  }, null);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -438,6 +465,15 @@ Write a function named extractChildren that, given the array of characters from 
 
 const extractChildren = (arr) => {
   // Solution code here...
+  return arr.filter((character) => (/a/g).test(character.name))
+    .reduce((childList, house) => {
+      if (house.children) {
+        for (let chillen of house.children) {
+          childList.push(chillen);
+        }
+      }
+      return childList;
+    }, []);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -502,31 +538,31 @@ describe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should return the total number of children', () => {
     expect(countNumberOfChildren(characters)).toStrictEqual(14);
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return the average of the numbers in the array', () => {
     expect(calculateAverage([18, 290, 37, 4, 55, 16, 7, 85 ])).toStrictEqual(64);
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return a count of the prime numbers in the array', () => {
     expect(countPrimeNumbers([1, 2, 13, 64, 45, 56, 17, 8])).toStrictEqual(3);
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should return any stats that match the input', () => {
     expect(extractStat('speed', snorlaxData.stats)).toStrictEqual({ stat: { url: 'https://pokeapi.co/api/v2/stat/6/', name: 'speed' }, effort: 5, baseStat: 30 });
   });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   test('It should return an array containing the names of the children', () => {
     expect(extractChildren(characters)).toStrictEqual([ 'Robb', 'Sansa', 'Arya', 'Bran', 'Rickon', 'Drogon', 'Rhaegal', 'Viserion', 'Margaery', 'Loras' ]);
     expect(extractChildren(characters).length).toStrictEqual(10);
