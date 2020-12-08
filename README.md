@@ -64,4 +64,4 @@ The final structure should resemble this:
   └── README.md
 ```
 > Class-01 (dec07)
-[ArrayReverse-CC-01] (data-structures-and-algorithms/javascript/CodeChallenges/CC14_Array-Reverse/README.md)
+[ArrayReverse-CC-01] (./javascript/CodeChallenges/CC14_Array-Reverse/README.md)

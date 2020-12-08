@@ -9,4 +9,4 @@
 
 ## Solution:
 
-[Screen](data-structures-and-algorithms/javascript/CodeChallenges/CC14_Array-Reverse/assets/Screen Shot 2020-12-07 at 17.29.50.png)
+[Screen](./javascript/CodeChallenges/CC14_Array-Reverse/assets/Screen Shot 2020-12-07 at 17.29.50.png)
