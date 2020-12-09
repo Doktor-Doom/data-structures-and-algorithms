@@ -9,7 +9,7 @@
 
 ## Solution:
 
-[WB](javascript/CodeChallenges/CC14_Array-Reverse/CC-02_Array_Shift/assets/Screen Shot 2020-12-08 at 6.15.58 PM.png)
+[WB](/Users/Oli/CF/data-structures-and-algorithms/javascript/CodeChallenges/CC14_Array-Reverse/CC-02_Array_Shift/assets/Array_Shift.png)
 
 ### Sources:
 https://hosting.review/tutorial/javascript-add-to-array/
