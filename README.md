@@ -64,7 +64,10 @@ The final structure should resemble this:
   └── README.md
 ```
 > Class-01 (dec07)
-[ArrayReverse-CC-01] (javascript/CodeChallenges/CC14_Array-Reverse/README.md)
+[ArrayReverse-CC-01] (./javascript/CodeChallenges/CC14_Array-Reverse/README.md)
 
 > Class-02 (dec08)
-[Array-Shift CC-02] ()
+[Array-Shift-CC-02] (./javascript/CodeChallenges/CC14_Array-Reverse/CC-02_Array_Shift/README.md)
+
+> Class-03 (dec09)
+[Array-Binary-Search] (./)
