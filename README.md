@@ -71,3 +71,6 @@ The final structure should resemble this:
 
 > Class-03 (dec09)
 [Array-Binary-Search] (./)
+
+> Class-04 (dec-10)
+[Whiteboard-Interview-Practice] (./javascript/CodeChallenges/CC14_Array-Reverse/CC-04_Whitboard_Interview/README.md)
