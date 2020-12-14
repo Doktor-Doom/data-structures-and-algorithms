@@ -74,3 +74,6 @@ The final structure should resemble this:
 
 > Class-04 (dec-10)
 [Whiteboard-Interview-Practice] (./javascript/CodeChallenges/CC14_Array-Reverse/CC-04_Whitboard_Interview/README.md)
+
+> Class-05 (dec-11)
+[Linked-List] (./javascript/Data_Structures/CC-05_Linked-Lists/README.md)
