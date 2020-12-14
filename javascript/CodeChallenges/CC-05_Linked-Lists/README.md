@@ -24,7 +24,7 @@ Andre Olivier Martin & Matt Ravenmoore
 English
 
 ## Solution
-[linkedPartial] ()
+[linkedPartial] (assets)
 
 ## Sources and credits
 https://stackoverflow.com/questions/51165/how-to-sort-strings-in-javascript
