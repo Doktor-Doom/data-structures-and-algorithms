@@ -77,3 +77,6 @@ The final structure should resemble this:
 
 > Class-05 (dec-11)
 [Linked-List] (./javascript/Data_Structures/CC-05_Linked-Lists/README.md)
+
+> Class-06 (dec-14)
+[LL-Insertions] (./javascript/CodeChallenges/CC-06_ll-insertions/README.md)
