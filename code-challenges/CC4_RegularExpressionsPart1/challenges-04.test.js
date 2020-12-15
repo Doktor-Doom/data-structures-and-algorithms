@@ -75,15 +75,23 @@ const citiesAtoJ = (arr) => {
 //     }
 //   });
 //   return figNewton;
-  let figArr = [];
-  arr.forEach( val => {
-    let regex = /ˆ[A-J][a-zA-Z]+/g;
-    const stad = val.match(regex);
-    if(stad){
-      figArr.push(stad[0]);
+  // let figArr = [];
+  // arr.forEach( val => {
+  //   let regex = /ˆ[A-J][a-zA-Z]+/g;
+  //   const stad = val.match(regex);
+  //   if(stad){
+  //     figArr.push(stad[0]);
+  //   }
+  // });
+  // return figArr;
+  let regex = /^[A-J]\w+/;
+  let copyArr = new Array();
+  arr.forEach(city => {
+    if(regex.test(city)) {
+      copyArr.push(city);
     }
   });
-  return figArr;
+  return copyArr;
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -100,6 +108,8 @@ const citiesAtoJ = (arr) => {
 
 const matchMonth = (input) => {
   // Solution code here...
+  let regex = /\b[Oo]ct(ober)*\b/;
+  return regex.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -114,6 +124,12 @@ The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "
 
 const noPunctuation = str => {
   // Solution code here...
+  let regex = /[a-z0-9]+\s/gi;
+  let tempArr, driedPineapple = new Array();
+  while((tempArr = regex.exec(str)) !== null) {
+    driedPineapple.push(tempArr[0]);
+  }
+  return driedPineapple;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -130,6 +146,8 @@ For example, 'Welcome to Code 301!' will return 'W_lc_m_ t_ C_d_ 301!'.
 
 let hangman = (str) => {
   // Solution code here...
+  let regex = /[aeiou]/gi;
+  return regex[Symbol.replace](str, '_');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -146,6 +164,7 @@ const seashells = 'She sells seashells by the seashore. The shells she sells are
 
 const findShells = (str) => {
   // Solution code here...
+  return str.match(/\w*ells\b/g);
 };
 
 /* ------------------------------------------------------------------------------------------------

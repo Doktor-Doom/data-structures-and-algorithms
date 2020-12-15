@@ -1,6 +1,9 @@
 'use strict';
 
 /* ------------------------------------------------------------------------------------------------
+
+CC-08
+
 CHALLENGE 1 - Review
 
 Write a function named sayHello, that sends the message 'Hello from the back-end' when a user hits the `/hello` route.
@@ -110,7 +113,7 @@ const snorlaxData = {
 
 const getBaseStatGreaterThan = (arr, minBaseStat) => {
   // Solution code here...
-  return arr.filter(int => minBaseStat.test);
+  return arr.filter(stat => stat.baseStat > minBaseStat);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -123,6 +126,8 @@ For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 
 
 const getStatName = (arr, minBaseStat) => {
   // Solution code here...
+  let temp = arr.filter(value => value.baseStat > minBaseStat);
+  return temp.map(obj => obj.stat.name);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -176,6 +181,7 @@ const characters = [
 
 const getCharactersWithoutChildren = (arr) => {
   // Solution code here...
+  return arr.filter(obj => obj.children===undefined);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -188,6 +194,14 @@ For example: evenOddNumericValues(['Gregor', 2, 4, 1]) returns ['even', 'even', 
 
 const evenOddNumericValues = (arr) => {
   // Solution code here...
+  let temp = arr.filter(value => typeof(value)==='number');
+  return temp.map(num => {
+    if(num%2===0){
+      return 'even';
+    } else {
+      return 'odd';
+    }
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -284,7 +298,7 @@ describe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return the name of the stats that exceed that maximum', () => {
     expect(getStatName(snorlaxData.stats, 50)).toStrictEqual([ 'special-defense', 'special-attack' ]);
     expect(getStatName(snorlaxData.stats, 50).length).toStrictEqual(2);
@@ -305,14 +319,14 @@ xdescribe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return an array containing characters who do not have children', () => {
     expect(getCharactersWithoutChildren(characters)).toStrictEqual([ { name: 'Sansa', spouse: 'Tyrion', house: 'Stark' }, { name: 'Jon', spouse: null, house: 'Snow' } ]);
     expect(getCharactersWithoutChildren(characters).length).toStrictEqual(2);
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should remove non-integers and return "even" or "odd', () => {
     expect(evenOddNumericValues(['Gregor', 2, 4, 1])).toStrictEqual(['even', 'even', 'odd']);
     expect(evenOddNumericValues(['Gregor', 2, 4, 1]).length).toStrictEqual(3);

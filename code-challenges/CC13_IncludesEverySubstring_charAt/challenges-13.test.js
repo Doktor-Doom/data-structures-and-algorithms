@@ -1,5 +1,5 @@
 'use strict';
-
+// CC-13
 // to learn more about the cheerio library and what it is doing, look at their documentation: https://www.npmjs.com/package/cheerio
 const cheerio = require('cheerio');
 
@@ -265,7 +265,7 @@ describe('Testing challenge 8', () => {
   });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   test('It should remove Brook from all courses', () => {
     const roster = [
       ['Michelle', 'Allie', 'Brook TESTING'],
@@ -283,7 +283,7 @@ xdescribe('Testing challenge 9', () => {
   });
 });
 
-xdescribe('Testing challenge 10', () => {
+describe('Testing challenge 10', () => {
   test('It should sort events by the day on which they happen', () => {
     const events = ['Dancing on Mondays and Tuesdays', 'Meet the inventors! Monday, August 7', 'in the club on a Tuesday', 'Thursday Night Code', 'Saturday Night Fever'];
     const sortedEvents = sortByDay(events);
@@ -307,7 +307,7 @@ xdescribe('Testing challenge 10', () => {
   });
 });
 
-xdescribe('Testing challenge 11', () => {
+describe('Testing challenge 11', () => {
   test('It should return the ith character of the ith string', () => {
     const words = ['apple', 'banana', 'cantaloupe'];
 

@@ -1,6 +1,9 @@
 'use strict';
 
 /* ------------------------------------------------------------------------------------------------
+
+CC-11
+
 CHALLENGE 1 - Review
 
 Write a function that iterates over an array of people objects 
