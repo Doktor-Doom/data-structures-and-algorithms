@@ -1,5 +1,6 @@
 # Linked list insertions.
 
+# Code Challenge:
 Specifications
 Read all of these instructions carefully. Name things exactly as described.
 Do all your work in a public repository called data-structures-and-algorithms, with a well-formatted, detailed top-level README.md.
@@ -59,3 +60,10 @@ Ensure your complete solution follows the standard requirements.
 Write unit tests
 Follow the template for a well-formatted README
 Submit the assignment following these instructions
+## CC=Code Challenge/Pair Programming
+Matt Ravenmoore/ Andre Olivier Martin
+## Languages
+
+## Solution
+
+## Sources and credits
