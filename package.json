@@ -16,5 +16,15 @@
     "supertest": "^4.0.2",
     "eslint": "^7.2.0",
     "jest": "^26.0.1"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Doktor-Doom/data-structures-and-algorithms.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/Doktor-Doom/data-structures-and-algorithms/issues"
+  },
+  "homepage": "https://github.com/Doktor-Doom/data-structures-and-algorithms#readme"
 }
