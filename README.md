@@ -80,3 +80,6 @@ The final structure should resemble this:
 
 > Class-06 (dec-14)
 [LL-Insertions] (./javascript/CodeChallenges/CC-06_ll-insertions/README.md)
+
+> Class-17
+[WB](./CodeChallenges/CC-17_traverseBT/Cc17.jpg)
