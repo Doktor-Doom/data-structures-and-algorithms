@@ -64,22 +64,22 @@ The final structure should resemble this:
   └── README.md
 ```
 > Class-01 (dec07)
-[ArrayReverse-CC-01] (./javascript/CodeChallenges/CC14_Array-Reverse/README.md)
+[ArrayReverse-CC-01](./javascript/CodeChallenges/CC14_Array-Reverse/README.md)
 
 > Class-02 (dec08)
-[Array-Shift-CC-02] (./javascript/CodeChallenges/CC14_Array-Reverse/CC-02_Array_Shift/README.md)
+[Array-Shift-CC-02](./javascript/CodeChallenges/CC14_Array-Reverse/CC-02_Array_Shift/README.md)
 
 > Class-03 (dec09)
-[Array-Binary-Search] (./)
+[Array-Binary-Search](./)
 
 > Class-04 (dec-10)
-[Whiteboard-Interview-Practice] (./javascript/CodeChallenges/CC14_Array-Reverse/CC-04_Whitboard_Interview/README.md)
+[Whiteboard-Interview-Practice](./javascript/CodeChallenges/CC14_Array-Reverse/CC-04_Whitboard_Interview/README.md)
 
 > Class-05 (dec-11)
-[Linked-List] (./javascript/Data_Structures/CC-05_Linked-Lists/README.md)
+[Linked-List](./javascript/Data_Structures/CC-05_Linked-Lists/README.md)
 
 > Class-06 (dec-14)
-[LL-Insertions] (./javascript/CodeChallenges/CC-06_ll-insertions/README.md)
+[LL-Insertions](./javascript/CodeChallenges/CC-06_ll-insertions/README.md)
 
 > Class-17
 [WB](./CodeChallenges/CC-17_traverseBT/Cc17.jpg)
