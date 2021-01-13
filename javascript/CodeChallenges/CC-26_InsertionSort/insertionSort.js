@@ -6,7 +6,7 @@ const insertionSort = (inputArr) => {
   for (let i = 1; i < length; i++) {
     let j = i - 1;
     let temp = inputArr[i];
-// isolating (j >= 0) &&
+// isolating (j >= 0) && order of operations, seperation of values
     while ((j >= 0) && (temp < inputArr[j])) {
       inputArr[j + 1] = inputArr[j];
       j = j - 1;
