@@ -8,7 +8,7 @@
     "test": "jest --verbose --coverage",
     "lint": "eslint '**/*.js'"
   },
-  "author": "",
+  "author": "Andre Olivier Martin",
   "license": "MIT",
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
