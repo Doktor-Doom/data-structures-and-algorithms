@@ -9,6 +9,5 @@ describe('Hash', () => {
     expect(pineappleHash.get('')).toEqual('');
   });
   it('', () => {
-    
   });
 });
