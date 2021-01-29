@@ -116,4 +116,4 @@ class Graph {
 }
 
 
-module.exports = {Graph, Vertex};
+module.exports = { Graph, Vertex };
