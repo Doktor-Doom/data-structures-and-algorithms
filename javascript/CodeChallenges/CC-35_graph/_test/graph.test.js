@@ -15,7 +15,7 @@ describe('Graph data structure', ()=>{
     expect(graph.getNodes().get(vertex1)).toStrictEqual([]);
   });
 
-  it('Can successfully return a graph with only 1 edge (two nodes and an edge)', () => {
+  it('Can successfully return a graph with only 1 edge', () => {
     expect(graph.size()).toBe(2);
   });
 
