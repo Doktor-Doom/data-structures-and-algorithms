@@ -2,9 +2,6 @@
 
 ## Language: `JavaScript`
 
-
-
-
 # Code Challenge:
 
 ## CC=Code Challenge/Pair Programming
